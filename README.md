@@ -7,9 +7,8 @@ You can create your own templates using JSON.
 LatexBuilder will then parse your template and generate a .tex file that you can compile with your preferred LaTeX engine. LatexBuilder is ideal for creating reports, presentations, papers, and other documents that follow a similar structure and style. 📚
 
 ## Usage 🖥
-On **Windows**:
 
-- Download the source code and compile it using make or download the binaries 
+- Download the source code and compile it or download the binaries 
 - From a terminal of your choice launch the program using the following arguments: 
 
 `./LatexBuilder.exe <template> <name> <path>` where
@@ -17,12 +16,13 @@ On **Windows**:
 - _\<name\>_ is the name of the file to be created 
 - _\<path\>_ is the directory where the program will be saved 
 
-On **Linux**:
-
-The linux version will come out soon! Sit tight! ⏳
-
 ## Templates 📐
 
-The templates are stored in `C:\Users\Public\Documents\LatexBuilder` for now.
+On **Windows** the templates are stored in `C:/Users/Public/Documents/LatexBuilder/`
 
-**JSON** is used to store templates that have multiple objects. 
+On **Linux** the templates are stored in `/home/.LatexBuilder/`
+
+**JSON** is used to store templates.
+
+For more information visit __coming soon__.
+

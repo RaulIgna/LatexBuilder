@@ -8,6 +8,12 @@
 #include <string>
 #include <vector>
 
+#ifdef linux
+#define FOLDER_PATH "/home/.LatexBuilder/"
+#else
+#define FOLDER_PATH "C:/Users/Public/Documents/LatexBuilder/"
+#endif
+
 namespace arguments
 {
     extern std::vector<std::string> args;
@@ -16,7 +22,6 @@ namespace arguments
     extern std::string template_name;
     extern std::string path;
     extern std::string template_complete_path;
-    const extern std::string directory_path; // TODO: Change this, make it linux compatible
     bool validate_arguments();
     void print_help();
 }

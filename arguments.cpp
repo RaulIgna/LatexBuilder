@@ -20,7 +20,6 @@ namespace arguments
     std::string path;
     std::string template_complete_path;
 
-    const std::string directory_path = "C:/Users/Public/Documents/LatexBuilder";
     void print_help()
     {
         fmt::print(
@@ -35,13 +34,13 @@ namespace arguments
 
     bool validate_arguments()
     {
-        if(!fs::exists(directory_path))
+        if(!fs::exists(FOLDER_PATH))
         {
             print::PrintWarning(fmt::format("Creating a folder for the templates in {}\n"\
                     "This should only run once\n"\
                     "Save or create some templates in {} and re-run the program\n",
-                   directory_path.c_str(),directory_path.c_str()));
-            if(!fs::create_directory(directory_path))
+                   FOLDER_PATH, FOLDER_PATH));
+            if(!fs::create_directory(FOLDER_PATH))
             {
                 print::PrintError("Failed to create directory");
             }
@@ -68,7 +67,7 @@ namespace arguments
         name = args[1];
         path = args[2];
 
-        template_complete_path = directory_path + "/" + template_name + ".json";
+        template_complete_path = std::string{FOLDER_PATH} + "/" + template_name + ".json";
         if(!fs::exists(template_complete_path))
         {
             print::PrintError("Error! The template does not exist!");
@@ -77,4 +76,6 @@ namespace arguments
 
         return true;
     }
+
+
 }
